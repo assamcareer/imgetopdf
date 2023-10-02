@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="upload-file">
+		<input type="file" onChange="loadFile(event)" name="" accept=".png, .jpg, .jpeg">
+		Upload Image
+	</div>
+	<img id="showImg" src="images/img.png">
+	<button onClick="pdfDown()">Image To PDF</button>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
