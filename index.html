@@ -1,48 +1,50 @@
-<DOCTYPE HTML> 
 <html>
-  <head>
-	<title>IMG-to-PDF Converter</title>
-	<meta charset="UTF-8">
-	<meta name="author" content="Gideon Akinsanmi">
-	<meta name="description" content="Easily convert any set of images to PDFs">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<link rel='stylesheet' href='/stylesheets/index.css' />
-  </head>
-  <body>
-	<main>
-	  <header>
-		<h1><a href='/'>IMG2PDF</a></h1>
-	  </header>
-	  <article>
-		<p class='title'>Easily convert your PNG and JPG images </p>
-		<form method='post' action='/upload' enctype='multipart/form-data'>
-		  <input id='file-upload' type='file' name='images' accept='.png, .jpg' multiple/>
-		  <p><label for='file-upload'>Select files</label></p>
-		  <p id='selected-files'><code> </code> </p>
-		  <p><input type='submit' value='upload' /></p>
-		</form>
-	  </article>
-	  <footer>
-		<p><code>copyright &copy; IMG2PDF 2023</code></p>
-	  </footer>
-	  <script>
-		let fileUpload = document.getElementById('file-upload');
-		let selectedFiles = document.querySelector('#selected-files code');
-		let submitButton = document.querySelector('input[type=submit]');
-			
-		let filenames = ''
-		fileUpload.onchange = function (){
-			filenames = ''
-			for(let file of this.files){
-				filenames += file.name
-				filenames += ','
-			}
-			selectedFiles.parentElement.style.display = 'block'
-			selectedFiles.textContent = filenames
-			submitButton.style.display = 'inline-block';
-		}
-	  </script>
-	</main>
-  </body>
-</html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+        <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Img To PDF</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <span class="logo">
+            <i class="fa fa-file-pdf-o"></i> PDF
+            </span>
+            <div>
+            <button onClick={calcPdfSize(this)} id="convertBtn" convertBtn={convertBtn}>SAVE AS PDF</button>
+            <button onClick={embedImages()} id="download">DOWNLOAD</button>
+            <button id="upload-msg" type="button" disabled="true">UPLOAD FILES</button>
+            </div>
+        </div>
+
+        <div class="input-page" id="input-page">
+            <div class="choose-file">          
+                <div class="add-more-files">
+                    <div class="inp-container">
+                        <input type="file" id="upload-file" onChange={encodeImageFileAsURL(this)} multiple accept="image/*"/>
+                        <h4 class="drop">
+                            DRAG & DROP OR
+                        </h4>
+                        <p >
+                            <i class="fa fa-file-image-o fa-4x img-icon"></i>
+                            
+                        </p>
+                        <label htmlFor="upload-file" id="custom-file">CHOOSE FILES</label>
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+        <div class="pdf-page" id="pdf-page">             
+            <div class="create-pdf" id="create-pdf"> 
+                    
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+    </html>
+    
