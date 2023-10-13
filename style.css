@@ -12,10 +12,10 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #ffffff;
+  background: #5256ad;
 }
 .drag-area{
-  border: 2px dashed #fff;
+  border: 2px solid #fff;
   padding: 5%;
   position: absolute;
   left: 15%;
