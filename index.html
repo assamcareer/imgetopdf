@@ -1,50 +1,46 @@
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
-        <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-        <link rel="stylesheet" href="/index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Img To PDF</title>
-    </head>
-
-    <body>
-        <div class="nav">
-            <span class="logo">
-            <i class="fa fa-file-pdf-o"></i> PDF
-            </span>
-            <div>
-            <button onClick={calcPdfSize(this)} id="convertBtn" convertBtn={convertBtn}>SAVE AS PDF</button>
-            <button onClick={embedImages()} id="download">DOWNLOAD</button>
-            <button id="upload-msg" type="button" disabled="true">UPLOAD FILES</button>
-            </div>
-        </div>
-
-        <div class="input-page" id="input-page">
-            <div class="choose-file">          
-                <div class="add-more-files">
-                    <div class="inp-container">
-                        <input type="file" id="upload-file" onChange={encodeImageFileAsURL(this)} multiple accept="image/*"/>
-                        <h4 class="drop">
-                            DRAG & DROP OR
-                        </h4>
-                        <p >
-                            <i class="fa fa-file-image-o fa-4x img-icon"></i>
-                            
-                        </p>
-                        <label htmlFor="upload-file" id="custom-file">CHOOSE FILES</label>
-                    </div>
-                </div>            
-            </div>
-        </div>
-
-        <div class="pdf-page" id="pdf-page">             
-            <div class="create-pdf" id="create-pdf"> 
-                    
-            </div>
-        </div>
-
-        <script src="index.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="previewStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
     
+</head>
+<body>
+    
+    <h1 class="title">Pdf Master</h1>
+    <div id="container1">
+        <div class="drag-area" id="drag-area">
+            <div class="icon"><i class="fa fa-cloud-upload"></i></div>
+            <header>Drag & Drop to Upload File</header>
+            <span>OR</span>
+            <button id="browse-button" >Browse File</button>
+            <input type="file" hidden multiple id="image-input" accept="image/jpeg, image/png, image/jpg">
+        </div>
+    </div>
+
+    <div style="width:100vw; height:100vh;">
+        <h1 class="title" id="h">Pdf Master</h1>
+        <div id="container2">
+            <div id="container"></div>
+            <input type="file" name="input-image" id="inputFile" onclick="this.value = null;"  accept="image/jpeg, image/png, image/jpg" hidden>
+
+            <!-- <div class="buttonContainer"> -->
+                <div id="addMore"><i class="material-icons" style="font-weight:bold">add</i>Add</div>
+                <div id="downloadPDF" onclick="makePdf();"><i class="material-icons" style="font-weight:bold">download</i> Download</div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <!-- <script src="previewScript.js" defer></script> -->
+</body>
+</html>
