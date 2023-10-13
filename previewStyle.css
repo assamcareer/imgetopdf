@@ -1,0 +1,165 @@
+#addMore,
+#downloadPDF{
+    color: aliceblue;
+    background-color: black;
+    font-size: x-large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    border: 3px aliceblue solid;
+    size: 1%;
+    padding: 1%;
+    width: max-content;
+    /* position: fixed;
+    left: 40%;
+    top: 90%; */
+}
+
+#addMore:hover,
+#downloadPDF:hover{
+    color: black;
+    background-color: aliceblue;
+    border: 2px black solid;
+    /* box-shadow: 2px 2px 3px 4px rgb(53, 51, 51); */
+    font-weight: 500;
+}
+
+.imageContainer{
+    margin: 2vw;
+    width: 20vw;
+    height: 20vw;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20vh;
+    /* left: 10vw; */
+}
+
+.row{
+    display: flex;
+}
+
+.image{
+    width: 20vw;
+    height: 20vw;
+    z-index: -1;
+    border: 2px rgb(5, 5, 5) solid;
+    position: relative;
+    top: -8%;
+    box-shadow: 1px 1px 4px 3px rgb(29, 28, 28);
+}
+
+.image:hover{
+    width: 350px;
+    height: 350px;
+    border: 4px rgb(5, 5, 5) solid;
+    box-shadow: 2px 2px 6px 4px rgb(29, 28, 28);
+}
+
+.redCross{
+    width: 7%;
+    position: relative;
+    left: 92%;
+    top: 3%;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.redCross:hover{
+    opacity: 1;
+}
+
+/* body{
+    background-color: #5256ad;
+} */
+
+#dropzone {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    line-height: 200px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+#h {
+    display: none;
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+}
+
+.buttonContainer{
+    border: 2px red solid;
+    width: fit-content;
+    height: fit-content;  
+}
+
+@media only screen and (max-width:481px) {
+    #addMore{
+        margin-bottom: 10px;
+        border-radius: 15px;
+        padding: 5px;
+        position: fixed;
+        top: 70%;
+        left: 35%;
+    }
+    #downloadPDF{
+        border-radius: 15px;
+        padding: 5px;
+        position: fixed;
+        top: 80%;
+        left: 30%;
+    }
+    .image{
+        width: 60vw;
+        height: 60vw;
+    }
+    .imageContainer{
+        width: 60vw;
+        height: 60vw;
+        margin-bottom: 4vw;
+        margin-left: 20vw;
+    }
+    
+}
+
+@media only screen and (min-width:481px) {
+    #addMore{
+        border-radius: 20px;
+        max-width: fit-content;
+        height: fit-content;
+        position: fixed;
+        top: 80%;
+        right: 60%;    
+    }
+
+    #downloadPDF{
+        border-radius: 20px;
+        max-width: fit-content;
+        position: fixed;
+        top: 80%;
+        left: 60%;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:1000px){
+    .image{
+        width:40vw;
+        height: 40vw;
+        /* margin-left: 8vw; */
+    }
+    .imageContainer{
+        width:fit-content;
+        height: fit-content;
+        margin-bottom: 4vw;
+    }
+    .redCross{
+        position: relative;
+        left: 85%;
+        margin-bottom: 77%;
+    }
+}
